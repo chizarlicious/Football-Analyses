@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
+from functools import total_ordering
 
+
+@total_ordering  # Supplies all comparison operators based on two
 class Play:
     def __init__(self, play_json):
         """ Allows easy access to information contained in a play object.
@@ -48,3 +51,12 @@ class Play:
     def __getitem__(self, key):
         """ Returns the value associated with the key in the play object. """
         return self.json.__getitem__(key)
+
+    # Define comparisons to allow sorting
+    def __lt__(self, other):
+        """ Returns self.number < other.number """
+        return self.number.__lt__(other.number)
+
+    def __eq__(self, other):
+        """ Returns self.number == other.number """
+        return self.number.__eq__(other.number)
