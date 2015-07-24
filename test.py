@@ -11,6 +11,13 @@ import os # for navigating directories
 
 
 
+
+
+
+
+
+
+
 # note: team names are not always 3 characters. use split(). 
 
 
